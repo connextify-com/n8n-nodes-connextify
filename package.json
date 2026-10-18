@@ -1,0 +1,51 @@
+{
+  "name": "n8n-nodes-connextify",
+  "version": "1.0.1",
+  "description": "n8n community node for Connextify URL shortener and QR generator",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://connextify.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connextify-com/n8n-nodes-connextify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/connextify-com/n8n-nodes-connextify/issues"
+  },
+  "author": {
+    "name": "Connextify",
+    "email": "support@connextify.com"
+  },
+  "main": "dist/nodes/connextify/Connextify.node.js",
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "prepublishOnly": "npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ConnextifyOAuth2Api.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/connextify/Connextify.node.js",
+      "dist/nodes/connextify/ConnextifyTrigger.node.js",
+      "dist/nodes/connextify/ConnextifyPollingTrigger.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.23.0",
+    "@types/node": "^18.16.0",
+    "eslint": "^9.39.5",
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^5.2.2"
+  }
+}
